@@ -100,10 +100,19 @@
 
 
 
-<!--- Jumbotron -->
-<div class="forms-container">
-	<form id="whole-form"> 
+<!-- <div class="forms-container">
+	<form id="whole-form">  -->
 		<!-- ****Form**** -->
+		<!-- <div class="row-tab">
+			<div class="label-tab">
+				<label>Gender</label>
+			</div>
+			<div class="input-tab">
+				<input type="radio" name="gender_choices" value=1><label>Male</label>
+				<input type="radio" name="gender_choices" value=0><label>Female</label>
+			</div>
+		</div>
+
 		<div class="row-tab">
 		<div class="label-tab">
 			<label>Age</label>
@@ -163,8 +172,8 @@
 				<label>Do you have heart desease?</label>
 			</div>
 			<div class="input-tab">
-				<input type="radio" name="heart_desease_choices" value="yes_heart_desease"><label>Yes</label>
-				<input type="radio" name="heart_desease_choices" value="no_heart_desease"><label>No</label>
+				<input type="radio" name="heart_desease_choices" value=1><label>Yes</label>
+				<input type="radio" name="heart_desease_choices" value=0><label>No</label>
 			</div>
 		</div>
 
@@ -173,18 +182,18 @@
 				<label>Do you have hypertension?</label>
 			</div>
 			<div class="input-tab">
-				<input type="radio" name="hypertension_choices" value="yes_hypertension"><label>Yes</label>
-				<input type="radio" name="hypertension_choices" value="no_hypertension"><label>No</label>
+				<input type="radio" name="hypertension_choices" value=1><label>Yes</label>
+				<input type="radio" name="hypertension_choices" value=0><label>No</label>
 			</div>
 		</div>
 
 		<div class="row-tab">
 			<div class="label-tab">
-				<label>Are you married?</label>
+				<label>Were you ever married?</label>
 			</div>
 			<div class="input-tab">
-				<input type="radio" name="marriage_choices" value="yes_marriage"><label>Yes</label>
-				<input type="radio" name="marriage_choices" value="no_marriage"><label>No</label>
+				<input type="radio" name="marriage_choices" value=1><label>Yes</label>
+				<input type="radio" name="marriage_choices" value=0><label>No</label>
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary" href="/predict">Predict</button>
@@ -243,24 +252,122 @@
 
 
 
+    <form action="{{ url_for('predict')}}"method="post">
+    	<!-- <input type="text" name='gender' placeholder="Gender" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Gender</label>
+			</div>
+			<div class="input-tab" >
+				<input type="radio" name="gender" value=5 required="required"><label>Male</label>
+				<input type="radio" name="gender" value=0 required="required"><label>Female</label>
+			</div>
+		</div>
+        <!-- <input type="text" name="age" placeholder="Age" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Age</label>
+			</div>
+			<div class="input-tab">
+				<input type="number" name="age" required="required">	
+			</div>
+			</div>
+		<!-- <input type="text" name="hypertension" placeholder="Do you have hypertension?" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Do you have hypertension?</label>
+			</div>
+			<div class="input-tab">
+				<input type="radio" name="hypertension" value=1 required="required"><label>Yes</label>
+				<input type="radio" name="hypertension" value=0 required="required"><label>No</label>
+			</div>
+		</div>
+        <!-- <input type="text" name="heart_disease" placeholder="Does your family have a history of heart disease?" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Does your family have a history of heart disease?</label>
+			</div>
+			<div class="input-tab">
+				<input type="radio" name="heart_disease" value=1 ><label>Yes</label>
+				<input type="radio" name="heart_disease" value=0 ><label>No</label>
+			</div>
+		</div>
+		<!-- <input type="text" name="ever_married" placeholder="Marriage Status" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Were you ever married?</label>
+			</div>
+			<div class="input-tab">
+				<input type="radio" name="ever_married" value=1 required="required"><label>Yes</label>
+				<input type="radio" name="ever_married" value=0 required="required"><label>No</label>
+			</div>
+		</div>
+		<!-- <input type="text" name="work_type" placeholder="Type of Employment"/> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Work type</label>
+			</div>
+			<div class="select-tab">
+				
+					<input type="radio" name="work_type" value=0 required="required"><label>Govorment</label>
+					<input type="radio" name="work_type" value=2 required="required"><label>Private</label>
+					<input type="radio" name="work_type" value=3 required="required"><label>Self-Employed</label>
+					<input type="radio" name="work_type" value=4 required="required"><label>Children</label>
+					<input type="radio" name="work_type" value=1 required="required"><label>Never Worked</label>
+				
+			</div>
+		</div>
+        <!-- <input type="text" name="residence_type" placeholder="Rural or Urban" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Do you live in a rural or urban area?</label>
+			</div>
+			<div class="input-tab">
+				<input type="radio" name="residence_type" value=1 required="required"><label>Urban</label>
+				<input type="radio" name="residence_type" value=0 required="required"><label>Rural</label>
+			</div>
+		</div>
+        <!-- <input type="text" name="avg_glucose_level" placeholder="Glucose level" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Average Glucose Level</label>
+			</div>
+			<div class="input-tab">
+				<input type="number" name="avg_glucose_level" required="required">	
+			</div>
+			</div>
+		<!-- <input type="text" name="bmi" placeholder="BMI" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>BMI</label>
+			</div>
+			<div class="input-tab">
+				<input type="number" name="bmi" required="required">	
+			</div>
+			</div>
+        <!-- <input type="text" name="smoking_status" placeholder="Do you smoke?" required="required" /> -->
+		<div class="row-tab">
+			<div class="label-tab">
+				<label>Do you smoke?</label>
+			</div>
+			<div class="input-tab">
+				
+					<input type="radio" name="smoking_status"  value=1 required="required" /><label>No</label>
+					<input type="radio" name="smoking_status"  value=2 required="required" /><label>Yes</label>
+					<input type="radio" name="smoking_status"  value=0 required="required" /><label>Formerly</label>
+					
+			</div>
+		</div>
+		<br>
+        <br>
+		<button type="submit" class="btn btn-success btn-block btn-large">Predict</button>
 
-   <!-- <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name='Gender' placeholder="Gender" required="required" />
-        <input type="text" name="Age" placeholder="Age" required="required" />
-		<input type="text" name="Hypertension" placeholder="Do you have hypertension?" required="required" />
-        <input type="text" name="HeartDisease" placeholder="Do you have heart disease?" required="required" />
-        <input type="text" name="smoking" placeholder="Do you smoke?" required="required" />
-		<input type="text" name="BMI" placeholder="BMI" required="required" />
-        <input type="text" name="Glucose" placeholder="Glucose level" required="required" />
-		<input type="text" name="Marriage" placeholder="Marriage Status" required="required" />
-
-
-
+	</form> 
 	<br>
        <br>
-      <button type="submit" class="btn btn-success btn-block btn-large">Predict</button>
+      
 
-   </form> -->
+   
    {{ prediction_text }}
 
 </div>

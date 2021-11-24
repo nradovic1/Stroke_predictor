@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from imblearn.ensemble import BalancedRandomForestClassifier
 import pickle
 
-df = pd.read_csv('model_clean_data.csv')
+df = pd.read_csv('../Resources/model2_clean_data.csv')
 df = df.sample(frac=1)
 
 y = df['stroke']
