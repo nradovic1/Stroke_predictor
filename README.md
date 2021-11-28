@@ -6,7 +6,7 @@ According to World Health Organisation (WHO), stroke are the second leading caus
 With 1.2 billion clinical documents being produced in the United States every year, We built a stroke predictor using data analytic and machine learning so predicting stroke can be acquired conveniently and at a low cost.
 
 ## Technologies: 
-* Python/Pandas/Sklearn
+* Python/Pandas/Sklearn/pickel
 * PostgreSQL
 * Flask
 * HTML/CSS/Bootstrap
@@ -24,3 +24,5 @@ With 1.2 billion clinical documents being produced in the United States every ye
 
 ## Data Source
 Dataset is obtained at https://data.mendeley.com/datasets/x8ygrw87jw/1. It includes more than 40,000 rows and 12 of columns, which include 11 of features, such as bmi, heart disease, etc, and 1 target value column. 
+
+## Compile, Train and Evaluate the Model and convert it into pickel file
