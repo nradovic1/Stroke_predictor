@@ -23,6 +23,7 @@ defusedxml==0.7.1
 entrypoints==0.3
 Flask==1.1.2
 Flask-PyMongo==2.3.0
+Flask-SQLAlchemy==2.5.1
 flatbuffers==1.12
 gast==0.4.0
 geojson==2.5.0
