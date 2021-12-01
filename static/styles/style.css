@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
+h2{
+  text-align: center;
+}
+
 html,body{
   height:100%;
   width: 100%;
@@ -53,12 +57,14 @@ html,body{
 
 
 /* forms syle */
+.popup
 
 .forms-container {
   width:95%;
   margin:auto;
   color:black;
   background-color:white;
+
 }
 
 #whole-form {
@@ -87,6 +93,9 @@ html,body{
   text-align:left;
 }
 
+.submit-wrap {
+  width: 50%;
+}
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
@@ -97,6 +106,16 @@ html,body{
 }
 @media (max-width: 576px) {
   
+}
+
+/*---ExploreData --*/
+.features .box-container .box{
+  padding:3rem 2rem;
+  background: #fff;
+  outline: var(--outline);
+  outline-offset: -1rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
 }
 
 

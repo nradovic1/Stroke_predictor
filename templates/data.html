@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>data</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stroke Predictor 2021!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <!-- <link href="static/styles/style.css" rel="stylesheet"> -->
+        <link href="{{url_for('static', filename='/styles/style.css')}}" rel="stylesheet"/>
+        
+    
+    </head>
+
 <body>
-    <div action = "{{ url_for('predict')}}" method="post" >
-        <h1>Download dataset</h1>
-        <p>{{  data_text  }}</p>
-    </div>  
+
+<nav class="navbar navbar-light navbar-expand-md sticky-top">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+        <a class="navbar-brand"><img src="static/images/heart.png" ></a>
+        <ul class="navbar-nav justify-content-between" style="width:60!important;">
+            <li id="nav-bar-items" >
+                <a class="nav-link" href="/">Home</a>
+                </li>
+            <li id="nav-bar-items">
+                <a class="nav-link" href="/explore">Visualization</a>
+            </li>
+            <li id="nav-bar-items">
+                <a class="nav-link" href="/data">Data</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    
+<h1>Dataset</h1>
+<br>
+<p>{{  content  }}</p>
+    
 </body>
 </html>
