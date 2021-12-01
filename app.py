@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask,redirect, request, jsonify, render_template, url_for
+import os
 
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
@@ -7,6 +7,21 @@ from flask_pymongo import PyMongo
 import pickle
 
 app = Flask(__name__)
+
+from flask_sqlalchemy import SQLAlchemy
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') 
+# # or "sql:///db.sql"
+
+# # Remove tracking modifications
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+
+
+
+
 
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -32,7 +47,13 @@ def predict():
         return render_template('index.html',
                                prediction_text='High chances of patient having stroke'.format(prediction),
                               )
+@app.route('/data')
+def data():
 
+    results = db.session.query().all
+
+    return render_template('data.html',
+                                data_text = results)
 
 
 if __name__ == "__main__":
