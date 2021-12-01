@@ -25,4 +25,11 @@ With 1.2 billion clinical documents being produced in the United States every ye
 ## Data Source
 Dataset is obtained at https://data.mendeley.com/datasets/x8ygrw87jw/1. It includes more than 40,000 rows and 12 of columns, which include 11 of features, such as bmi, heart disease, etc, and 1 target value column. 
 
-## Compile, Train and Evaluate the Model and convert it into pickel file
+## Data cleaning and data preparation
+### To remove following items:
+* Null
+* columns of non-features, e.g. ID
+* Features scaling
+
+## Model selection
+* The data is higly unbalanced,meaning the number of people have heart stroke is actually negligible as compared to the ones not having it.So, while modeling and training data, either over sampling or under sampling has to be done to obtain best results.
