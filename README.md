@@ -35,4 +35,4 @@ Dataset is obtained at https://data.mendeley.com/datasets/x8ygrw87jw/1. It inclu
 * The data is higly unbalanced,meaning the number of people have heart stroke is actually negligible as compared to the ones not having it. Therefore, while modeling and training data, either over sampling or under sampling has to be done to obtain best results.
 * After comparing randomForest Classifier,KNN models, we decided to use SMOTE and ENN.
 
-Please visit our deployment at https://strokepredictorgatech.herokuapp.com
+## Please visit our deployment at https://strokepredictorgatech.herokuapp.com
