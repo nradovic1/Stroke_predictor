@@ -42,13 +42,14 @@ def predict():
     
 
     if prediction==0:
-        return render_template('index.html',
-                               prediction_text='Low chances of patient having stroke'.format(prediction),
+        return render_template('result.html',
+                               prediction_text='Low chances of having stroke.'.format(prediction),tips='Good job!Keep it going!'
                                )
     else:
-        return render_template('index.html',
-                               prediction_text='High chances of patient having stroke'.format(prediction),
+        return render_template('result.html',
+                               prediction_text='High chances of having stroke'.format(prediction),tips='No worry! We have suggestions for you.'
                               )
+                              
 @app.route('/data')
 def data():
     # Below is the code for connecting to postgresql locally. 
