@@ -33,4 +33,4 @@ Dataset is obtained at https://data.mendeley.com/datasets/x8ygrw87jw/1. It inclu
 
 ## Model selection
 * The data is higly unbalanced,meaning the number of people have heart stroke is actually negligible as compared to the ones not having it. Therefore, while modeling and training data, either over sampling or under sampling has to be done to obtain best results.
-* After comparing randomForest Classifier,KNN models, we decided to use KNeighborsClassifier with 
+* After comparing randomForest Classifier,KNN models, we decided to use KNeighborsClassifier with SMOTE
