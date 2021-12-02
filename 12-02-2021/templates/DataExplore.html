@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<!-- <link href="static/styles/style.css" rel="stylesheet"> -->
+	<link href="{{url_for('static', filename='/styles/style.css')}}" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<!-- Navigation -->
+<nav class="navbar navbar-light navbar-expand-md sticky-top">
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+		<a class="navbar-brand"><img src="static/images/heart.png" ></a>
+		<ul class="navbar-nav justify-content-between" style="width:60!important;">
+			<li id="nav-bar-items" >
+				<a class="nav-link" href="/">Home</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<!-- <div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="static/images/stroke_count.png" alt="">
+			<h3>Built with machine learning</h3>
+			<p>...</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="static/images/smoking_countplot.png" alt="">
+			<h3>Based on medical data</h3>
+			<p>...</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<i class="fas fa-chart-line"></i>
+			<img src="static/images/gender_countplot.png" alt="">
+			<p>...</p>
+		</div>
+</div> -->
+
+<div class="row welcome text-center">
+	<div class="col-12">
+		<hr class="hr-data">
+		<h2>A quick peek of our dataset</h2>
+	</div>
+</div>
+
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<img src="static/images/stroke_count.png" alt="">
+			<h3>Count for stroke</h3>
+			<p>Orange represents stoke;Blue represents no stroke</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<img src="static/images/smoking_countplot.png" alt="">
+			<h3>Count for smoking status</h3>
+			<p>Orange represents stoke;Blue represents no stroke</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<img src="static/images/gender_countplot.png" alt="">
+			<h3>Count for gender</h3>
+			<p>Orange represents stoke;Blue represents no stroke</p>
+		</div>
+
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<img src="static/images/married_countplot.png" alt="">
+			<h3>Count for mariaage status</h3>
+			<p>Orange represents stoke;Blue represents no stroke</p>
+		</div>
+</div>
+
+<div class="row welcome text-center">
+	<div class="col-12">
+		<hr class="hr-data">
+		<h2>Observations</h2>
+	
+	</div>
+</div>
+
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="static/images/bmi.png" alt="">
+			<h3>Stroke and BMI</h3>
+			<p>People aged more than 60 years have a bigger chance to get stroke</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="static/images/glucose_boxplot.png" alt="">
+			<h3>Stroke and glucose level</h3>
+			<p>People having stroke have an average glucose level of more than 100</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="static/images/age_boxplot.png" alt="">
+			<h3>Stroke and age</h3>
+			<p>There is as such no prominent observation of how does BMI affects the chances of having a stroke</p>
+		</div>
+   </div>
+</div>
+
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<img src="static/images/heatmap.png" alt="">
+
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-6">
+
+			<h3>Based on medical data</h3>
+			<p>...</p>
+		</div>
+   </div>
+</div>
+
+<div class='tableauPlaceholder' id='viz1638322715614' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;Stroke-prediction&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Stroke-prediction&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;Stroke-prediction&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1638322715614');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    
+</body>
+</html>
