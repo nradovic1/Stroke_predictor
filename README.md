@@ -6,11 +6,11 @@ According to World Health Organisation (WHO), stroke are the second leading caus
 With 1.2 billion clinical documents being produced in the United States every year, We built a stroke predictor using data analytic and machine learning so predicting stroke can be acquired conveniently and at a low cost.
 
 ## Technologies: 
-* Python/Pandas/Sklearn/pickel
-* PostgreSQL
+* Python/Pandas/Sklearn/pickle
+* PostgreSQL/SQLAlchemy
 * Flask
 * HTML/CSS/Bootstrap
-* Tableau
+* Tableau/Matplotlib/Seaborn
 * Heroku 
 
 ## Stages: 
@@ -32,7 +32,16 @@ Dataset is obtained at https://data.mendeley.com/datasets/x8ygrw87jw/1. It inclu
 * Features scaling
 
 ## Model selection
-* The data is higly unbalanced,meaning the number of people have heart stroke is actually negligible as compared to the ones not having it. Therefore, while modeling and training data, either over sampling or under sampling has to be done to obtain best results.
-* After comparing randomForest Classifier,KNN models, we decided to use SMOTE and ENN.
+* The data is higly unbalanced,meaning the number of people have heart stroke is actually negligible as compared to the ones not having it. Therefore, while modeling and training data, either over sampling or under sampling has to be done to obtain best results. SMOTEENN is another option were the majority is undersampled and the minority is oversampled.
+* After comparing many different classification models such as RandomForestClassifier,KNClassification, LogisticRegression, SVC and many more, we decided to use SMOTEENN and KNClassification classifier with parameters of (n_neighbors=3, weights='distance'). Not only was this the most accurate model with over 92% accuracy, it has a significantly higher recall then any other model. This is very important since this is regarding important health matters, having a false negative can be very dangerous.
+
+
+## Connecting to PostgreSQL
+* With SQLAlchemy, we exported the data to a server in Pgadmin4/PostgreSQL that was later connected to the Heroku server fpr the app
+
+## Deployment of model
+* Flask app is created as a backbone of the model and data.
+* A webpage is made using HTML/CSS/Bootstrap to display the app
+* Heroku app is created that connects to Github repository for all of the code.
 
 ## Please visit our deployment at https://strokepredictorgatech.herokuapp.com
