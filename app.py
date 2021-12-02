@@ -5,6 +5,7 @@ from flask import Flask, render_template, redirect, request, jsonify
 from flask_pymongo import PyMongo
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
+from sqlalchemy.ext.automap import automap_base
 
 import pickle
 
@@ -13,14 +14,11 @@ app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') 
-# # or "sql:///db.sql"
 
-# # Remove tracking modifications
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-
-
 
 
 
@@ -43,7 +41,6 @@ def predict():
     print(prediction)
     
 
-    # output = round(prediction[0], 2)
     if prediction==0:
         return render_template('index.html',
                                prediction_text='Low chances of patient having stroke'.format(prediction),
@@ -58,12 +55,9 @@ def data():
     # connection_string = "postgres:postgres@localhost:5432/stroke_db"
     # engine = create_engine(f'postgresql://{connection_string}')
 
-    # results = engine.execute('SELECT * FROM stroke_data').fetchall()
-   
-    # j_results = jsonify({'result': [dict(row) for row in results]})
-
-
-    return render_template('data.html') 
+    results = db.session.query('(gender, age, hypertension, heart_disease, ever_married, work_type, residence_type, avg_glucose_level, bmi, smoking_status, stroke) FROM stroke_data').all()
+    
+    return render_template('data.html', j_results = results)
 
 @app.route('/explore')
 def explore():
