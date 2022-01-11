@@ -6,7 +6,7 @@ According to World Health Organisation (WHO), stroke are the second leading caus
 With 1.2 billion clinical documents being produced in the United States every year, We built a stroke predictor using data analytic and machine learning so predicting stroke can be acquired conveniently and at a low cost.
 
 ## Technologies: 
-![image](https://img.shields.io/badge/technologies-Python-orange)/Pandas//pickle
+![image](https://img.shields.io/badge/technologies-Python-orange)
 ![image](https://img.shields.io/badge/technologies-Pandas-orange)
 ![image](https://img.shields.io/badge/technologies-Sklearn-orange)
 ![image](https://img.shields.io/badge/technologies-PostgreSQL-orange)
